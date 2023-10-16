@@ -30,7 +30,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 source ~/.bashrc
 
-cat ~/work/gihub/sqlplus_fzf/.inputrc >> ~/.inputrc
+cat ~/work/github/sqlplus_fzf/.inputrc >> ~/.inputrc
 cat ~/work/github/sqlplus_fzf/sqlplus_hotkeys > ~/.local/share/rlwrap/filters/sqlplus_hotkeys && chmod 755 ~/.local/share/rlwrap/filters/sqlplus_hotkeys
 cat ~/work/github/sqlplus_fzf/alias.sh >> ~/.bashrc.d/alias.sh
 source ~/.bashrc.d/alias.sh

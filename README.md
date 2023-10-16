@@ -15,7 +15,10 @@ To mention a few:
 The goal of this setup is to have the same user experience which [fzf](https://github.com/junegunn/fzf) provides to shell - in another cli applications, for instance in sqlplus.
 One of possible solutons is to use [rlwrap](https://github.com/hanslub42/rlwrap) (readline wrapper) as the intermediate layer between cli and [fzf](https://github.com/junegunn/fzf). Using an alias like `alias sqlplus="rlwrap sqlplus"` is a well known approach to bring readline editing capabilities to sqlplus, however, till recently i was not aware, that [rlwrap](https://github.com/hanslub42/rlwrap) (at least recent versions) brings very powerful capability of using filters and provides even set of predefined filters - one of them is called hande_hotkeys and there is even defined hotkey mapping for [fzf](https://github.com/junegunn/fzf), so very little things are remaining to do.
 
+https://github.com/Maxim4711/sqlplus_fzf/assets/3840386/b25739ce-059e-4882-b8bc-def6017d02b0
+
 ### Implementation
+
 - add hotkey handler for finding sql scripts - for example - all sql scripts from the home directory, or the set of directories defined in `ORACLE_PATH` or `SQLPATH`
 - add a preview option with a pager with syntax highlighting capabilities
 - add the chosen hotkeys to local .inputrc
@@ -25,7 +28,7 @@ One of possible solutons is to use [rlwrap](https://github.com/hanslub42/rlwrap)
 - `Ctrl-T` - to search sql script with preview, in fzf window Enter brings the selection (with `@` sign prepended) back to sqlplus `ESC` or `Ctrl-C` exits the [fzf](https://github.com/junegunn/fzf) window and goes back to sqlpus without selection
 - `Alt-down` bound to scroll down preview 
 - `Alt-up` to scroll up preview, the mouse is activated (to disable - call [fzf](https://github.com/junegunn/fzf) with `--no-mouse` option) and preview can be scrolled with the mouse wheel either 
-- `left-mouse` does linewise selection  
+- `Shift-left-mouse` does linewise selection  
 - `Alt-left-mouse` does the blockwise selection - as can be seen in the screencast, If using in a putty session - selection is automatically copied to the clipboard, but many other terminals (e.g. - kitty, iterm2, wezterm, etc) can be configured in similar way. Keybindings for linewise/blockwise selection are dependent on the terminal used - the mentioned above are for putty, in kde konsole the modifiers are different - for example, blockwise selection is done with `Ctrl-alt-left-mouse`
  
 ### Prerequisites: 

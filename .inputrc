@@ -1,0 +1,6 @@
+$include /etc/inputrc
+
+# rlwrap bindings
+
+"\C-r": rlwrap-hotkey
+"\C-t": rlwrap-hotkey

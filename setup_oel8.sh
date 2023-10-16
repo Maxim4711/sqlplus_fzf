@@ -14,7 +14,7 @@ mkdir -p ~/.local ~/work/github ~/.bashrc.d
 git clone https://github.com/Maxim4711/sqlplus_fzf.git  ~/work/github/sqlplus_fzf
 git clone https://github.com/hanslub42/rlwrap.git       ~/work/github/rlwrap
 
-(cd rlwrap && autoreconf -i && ./configure --prefix=$HOME/.local && make -j$(nproc) && make install)
+(cd ~/work/github/rlwrap && autoreconf -i && ./configure --prefix=$HOME/.local && make -j$(nproc) && make install)
 
 ### rust toolchain installation (passing -y switch disables confirmatin prompts and makes install script non interactive)
 ### Alternatively - to not install rust, just download last released binary and put it on the path

@@ -35,7 +35,7 @@ cat ~/work/github/sqlplus_fzf/sqlplus_hotkeys > ~/.local/share/rlwrap/filters/sq
 cat ~/work/github/sqlplus_fzf/alias.sh >> ~/.bashrc.d/alias.sh
 source ~/.bashrc.d/alias.sh
 
-cat << EOF >> ~/.bashrc
+cat << 'EOF' >> ~/.bashrc
 if [ -d ~/.bashrc.d ]; then
   for rc in ~/.bashrc.d/*; do
     if [ -f "$rc" ]; then

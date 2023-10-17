@@ -100,7 +100,7 @@ sub fuzzy_filter_history {
     write_file($editfile , $history);
 
     my ($first_chunk, $last_word) = @{split_off_last_word($prefix)};
-    my $select_1 = `cat $editfile | $command --exact --select-1 --query "$last_word"`;
+    my $select_1 = `cat $editfile | $command --exact -m -i --layout=reverse-list --select-1 --query "$last_word"`;
     chomp $select_1;
     return ("", $first_chunk . $select_1, $postfix, $history, $histpos);
   }

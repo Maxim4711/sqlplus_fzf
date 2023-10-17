@@ -30,7 +30,17 @@ https://github.com/Maxim4711/sqlplus_fzf/assets/3840386/b25739ce-059e-4882-b8bc-
 - `Alt-up` to scroll up preview, the mouse is activated (to disable - call [fzf](https://github.com/junegunn/fzf) with `--no-mouse` option) and preview can be scrolled with the mouse wheel either 
 - `Shift-left-mouse` does linewise selection  
 - `Alt-left-mouse` does the blockwise selection - as can be seen in the screencast, If using in a putty session - selection is automatically copied to the clipboard, but many other terminals (e.g. - kitty, iterm2, wezterm, etc) can be configured in similar way. Keybindings for linewise/blockwise selection are dependent on the terminal used - the mentioned above are for putty, in kde konsole the modifiers are different - for example, blockwise selection is done with `Ctrl-alt-left-mouse`
- 
+
+### Multiline statements
+Unfortunately, i haven't found a way to deal with multiline statements in history search - like 
+```sql
+select count(*), deptno
+from emp
+group by deptno
+/
+```
+in [fzf](https://github.com/junegunn/fzf) it will be still shown as multiple independent lines (both , [rlwrap](https://github.com/hanslub42/rlwrap) and [fzf](https://github.com/junegunn/fzf) support to certain degree multi line input/output by [fzf](https://github.com/junegunn/fzf) it is `--read0` `--print0` (delitmiter is ascii(0), by [rlwrap](https://github.com/hanslub42/rlwrap) it is `-m "newline-substitute"`, by default " \ ", but i don't see a possibility to give an ascii(0) as argument to this switch, besides that - [rlwrap](https://github.com/hanslub42/rlwrap) documentation states that `-m` is not working well with filters). However, [fzf](https://github.com/junegunn/fzf) with `-m` switch (multiline) allows multiple lines selection with `Tab` or `Shift-Tab` and [rlwrap](https://github.com/hanslub42/rlwrap) can handle the multiline selection pretty well, so, i'll leave it at this point with `fzf -m` switch.
+
 ### Prerequisites: 
 - [fzf](https://github.com/junegunn/fzf) installation is pretty simple - i prefer to just clone the github repository
 - [rlwrap](https://github.com/hanslub42/rlwrap) - in OEL 8 is provided via ol8_developer_EPEL repository and can be installed with dnf, i prefer however the local installation (compile from source) - because often user who

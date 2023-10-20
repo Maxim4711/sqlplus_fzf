@@ -25,7 +25,7 @@ https://github.com/Maxim4711/sqlplus_fzf/assets/3840386/b25739ce-059e-4882-b8bc-
 
 ### Keybindings 
 - `Ctrl-R` is bound to history search
-- `Ctrl-T` - to search sql script with preview, in fzf window `Enter` brings the selection (with `@` sign prepended) back to sqlplus `ESC` or `Ctrl-C` exits the [fzf](https://github.com/junegunn/fzf) window and goes back to sqlpus without selection, `ALT-e` loads selection into sqlplus editor (as defined with `define _editor`or `$VISUAL` env variable
+- `Ctrl-T` - to search sql script with preview, in fzf window `Enter` brings the selection (with `@` sign prepended) back to sqlplus `ESC` or `Ctrl-C` exits the [fzf](https://github.com/junegunn/fzf) window and goes back to sqlpus without selection, `ALT-e` loads selection into sqlplus editor (as defined with `define _editor` or `$VISUAL` env variable
 - `Alt-down` bound to scroll down preview 
 - `Alt-up` to scroll up preview, the mouse is activated (to disable - call [fzf](https://github.com/junegunn/fzf) with `--no-mouse` option) and preview can be scrolled with the mouse wheel either 
 - `Shift-left-mouse` does linewise selection  

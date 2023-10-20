@@ -115,14 +115,14 @@ sub fuzzy_search_files {
   my $colno = length($prefix) + 1;
   my ($first_chunk, $last_word) = @{split_off_last_word($prefix)};
   my $input = qq(find ~ -type f -name '*.sql');
-  my $arg = qq( --exact --height=80% --border=sharp);                                            # layout
+  my $arg = qq( -i --exact --height=80% --border=sharp);                                         # layout
   $arg .=  qq( --preview="bat -lsql --color always {}");                                         # preview
   $arg .=  qq( --header="CTRL-c or ESC to quit,ENTER to run script,ALT-e to edit");              # header
-  # $arg .= qq( --preview='LESS=" -R" LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s" less {}'); # preview
+  # $arg .= qq( --preview='LESS=" -R" LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s" less {}');   # preview
   $arg .=  qq( --bind alt-up:preview-up,alt-down:preview-down );                                 # binding scrolling preview keys
   $arg .=  qq( --bind 'alt-e:become(echo "ed" {})');                                             # binding load selected in editor
   $arg .=  qq( --bind 'enter:become(echo "@"{})');                                               # binding run selected in sqlplus
-  $arg .=  qq( --select-1 --query "$last_word");                                                 # rest of arguments
+  $arg .=  qq( --query "$last_word");                                                            # rest of arguments
   my $select_1 = `$input | $command $arg`;
   chomp $select_1 if ($select_1 =~ /^@/);
   return ("",  $select_1,  @dummy);
